@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Information Form</title>
+  </head>
+  <body>
+    <form id="studentForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required /><br />
+
+      <label for="college">College Name:</label>
+      <input type="text" id="college" name="college" required /><br />
+
+      <label>Events Interested In:</label>
+      <input type="checkbox" id="event1" name="events" value="Event 1" /> Event
+      1
+      <input type="checkbox" id="event2" name="events" value="Event 2" /> Event
+      2
+      <input type="checkbox" id="event3" name="events" value="Event 3" /> Event
+      3<br />
+
+      <label>Year of Study:</label>
+      <input type="radio" id="year1" name="year" value="First Year" /> First
+      Year
+      <input type="radio" id="year2" name="year" value="Second Year" /> Second
+      Year
+      <input type="radio" id="year3" name="year" value="Third Year" /> Third
+      Year
+      <input type="radio" id="year4" name="year" value="Fourth Year" /> Fourth
+      Year<br />
+
+      <input type="button" value="Submit" onclick="submitForm()" />
+    </form>
+
+    <script>
+      function submitForm() {
+        const formData = new FormData(document.getElementById("studentForm"));
+        const data = {};
+
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+
+        // Replace 'YOUR_GOOGLE_FORM_URL' with the actual URL of your Google Form
+        const googleFormUrl = "YOUR_GOOGLE_FORM_URL";
+
+        fetch(googleFormUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams(data),
+        });
+
+        alert("Form submitted successfully!");
+      }
+    </script>
+  </body>
+</html>

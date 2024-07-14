@@ -1,0 +1,29 @@
+{
+  "slides": [
+    {
+      "src": "/jeff.png",
+      "title": "Jeffrin Joel Raj",
+      "description": "President"
+    },
+    {
+      "src": "/subha.png",
+      "title": "Subhalakshmi",
+      "description": "Secretary"
+    },
+    {
+      "src": "/lokesh.png",
+      "title": "Lokesh",
+      "description": "Vice President"
+    },
+    {
+      "src": "/charan.png",
+      "title": "Charan",
+      "description": "Joint Secretary"
+    },
+    {
+      "src": "/san.png",
+      "title": "Sanjana",
+      "description": "Treasurer"
+    }
+  ]
+}
